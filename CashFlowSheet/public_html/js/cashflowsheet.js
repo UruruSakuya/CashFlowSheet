@@ -1,30 +1,21 @@
 function init() {
     var adding = function() {
-        var itemContainer = document.createElement("div");
-        var itemName = document.createElement("input");
-        var itemSumOfMoney = document.createElement("input");
-        itemContainer.appendChild(itemName);
-        itemContainer.appendChild(itemSumOfMoney);
-        
-        this.parentNode.appendChild(itemContainer);
+        $(this).parent().children(":last-child").after(
+                "<div class=\"item\"><input type=\"text\" /><input type=\"number\" step=\"10\" /></div>");
     };
     
     var removing = function() {
-        if (this.parentNode.lastChild.nodeType === Node.TEXT_NODE) {
-            this.parentNode.removeChild(this.parentNode.lastChild);  
-            arguments.callee(this);
-        } else if(this.parentNode.lastChild.nodeName === "DIV") {
-            this.parentNode.removeChild(this.parentNode.lastChild);  
-        }
+        $items = $(this).parent().children("div");
+        $items[$items.size() - 1].remove();
     };
     
-    var addingButtonElements = document.getElementsByClassName("addingContents");
-    for (var i = 0; i < addingButtonElements.length; i++) {
-        addingButtonElements[i].onclick = adding;
-    }
+    $addingButtons = $("input.addingContents");
+    jQuery.each($addingButtons, function() {
+       $(this).bind("click", adding);
+    });
     
-    var removingButtonElements = document.getElementsByClassName("removingContents");
-    for (var i = 0; i < removingButtonElements.length; i++) {
-        removingButtonElements[i].onclick = removing;
-    }
+    $removingButtons = $("input.removingContents");
+    jQuery.each($removingButtons, function() {
+       $(this).bind("click", removing);
+    });
 }
