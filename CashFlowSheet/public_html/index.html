@@ -3,62 +3,66 @@
     <head>
         <title>キャッシュフローシート</title>
         <meta charset="UTF-8">
-        <!--<script src="js/paperviewplugin.js"></script>-->
+        <script src="js/cashflowsheet.js"></script>
         <link rel="stylesheet" href="css/style.css" />
     </head>
-    <body>
+    <body onload="init()">
         <section>
             <h2>サマリー</h2>
             <div class="item">
-                <input type="text" value="所持金" />：<input type="number" step="10" readonly="readonly" />
+                <input type="text" value="所持金" /><input type="number" step="10" readonly="readonly" />
                 <input type="button" value="+" />
                 <input type="button" value="-" />
                 <input type="button" value="ペイチェック" />
             </div>
             <div class="item">
-                <input type="text" value="総収入" />：<input type="number" step="10" readonly="readonly" />
+                <input type="text" value="総収入" /><input type="number" step="10" readonly="readonly" />
             </div>
             <div class="item">
-                <input type="text" value="総支出" />：<input type="number" step="10" readonly="readonly" />
+                <input type="text" value="総支出" /><input type="number" step="10" readonly="readonly" />
             </div>
             <div class="item">
-                <input type="text" value="不労所得" />：<input type="number" step="10" readonly="readonly" />
+                <input type="text" value="不労所得" /><input type="number" step="10" readonly="readonly" />
             </div>
             <div class="item">
-                <input type="text" value="キャッシュフロー" />：<input type="number" step="10" readonly="readonly" />
+                <input type="text" value="キャッシュフロー" /><input type="number" step="10" readonly="readonly" />
             </div>
         </section>
         <section>
             <h2>損益計算書</h2>
             <h3>収入</h3>
-            <input type="button" value="+" />
-            <input type="button" value="-" />
-            <div class="item">
-                <input type="text" />：<input type="number" step="10" />
+            <div>
+                <input type="button" class="addingContents" value="+" />
+                <input type="button" class="removingContents" value="-" />
+                <div class="item">
+                    <input type="text" /><input type="number" step="10" />
+                </div>
             </div>
             <h3>支出</h3>
-            <input type="button" value="+" />
-            <input type="button" value="-" />
-            <div class="item">
-                <input type="text" value="税金" />：<input type="number" step="10" />
-            </div>
-            <div class="item">
-                <input type="text" value="住宅ローン" />：<input type="number" step="10" />
-            </div>
-            <div class="item">
-                <input type="text" value="教育ローン" />：<input type="number" step="10" />
-            </div>
-            <div class="item">
-                <input type="text" value="自動車ローン" />：<input type="number" step="10" />
-            </div>
-            <div class="item">
-                <input type="text" value="クレジットカード" />：<input type="number" step="10" />
-            </div>
-            <div class="item">
-                <input type="text" value="小売店のつけ" />：<input type="number" step="10" />
-            </div>
-            <div class="item">
-                <input type="text" value="その他の支出" />：<input type="number" step="10" />
+            <div>
+                <input type="button" class="addingContents" value="+" />
+                <input type="button" class="removingContents" value="-" />
+                <div class="item">
+                    <input type="text" value="税金" /><input type="number" step="10" />
+                </div>
+                <div class="item">
+                    <input type="text" value="住宅ローン" /><input type="number" step="10" />
+                </div>
+                <div class="item">
+                    <input type="text" value="教育ローン" /><input type="number" step="10" />
+                </div>
+                <div class="item">
+                    <input type="text" value="自動車ローン" /><input type="number" step="10" />
+                </div>
+                <div class="item">
+                    <input type="text" value="クレジットカード" /><input type="number" step="10" />
+                </div>
+                <div class="item">
+                    <input type="text" value="小売店のつけ" /><input type="number" step="10" />
+                </div>
+                <div class="item">
+                    <input type="text" value="その他の支出" /><input type="number" step="10" />
+                </div>
             </div>
         </section>
     </body>
