@@ -12,8 +12,8 @@
             <h2>サマリー</h2>
             <div class="item">
                 <input type="text" value="所持金" /><input type="number" step="10" id="handMoney" readonly="readonly" />
-                <input type="button" value="+" />
-                <input type="button" value="-" />
+                <input type="button" id="payedHandMoney" value="+" />
+                <input type="button" id="lossedHandMoney" value="-" />
                 <input type="button" id="payCheck" value="ペイチェック" />
             </div>
             <div class="item">
@@ -67,10 +67,12 @@
             </div>
         </section>
         <section id="pay" class="modal">
+            <p class="close">×</p>
             <input type="number" step="10" />
             <input type="button" value="受け取る" />
         </section>
         <section id="loss" class="modal">
+            <p class="close">×</p>
             <input type="number" step="10" />
             <input type="button" value="払う" />
         </section>
