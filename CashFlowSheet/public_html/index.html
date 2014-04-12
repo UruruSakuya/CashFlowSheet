@@ -11,36 +11,36 @@
         <section>
             <h2>サマリー</h2>
             <div class="item">
-                <input type="text" value="所持金" /><input type="number" step="10" readonly="readonly" />
+                <input type="text" value="所持金" /><input type="number" step="10" id="handMoney" readonly="readonly" />
                 <input type="button" value="+" />
                 <input type="button" value="-" />
-                <input type="button" value="ペイチェック" />
+                <input type="button" id="payCheck" value="ペイチェック" />
             </div>
             <div class="item">
-                <input type="text" value="総収入" /><input type="number" step="10" readonly="readonly" />
+                <input type="text" value="総収入" /><input type="number" id="allIncome" step="10" readonly="readonly" />
             </div>
             <div class="item">
-                <input type="text" value="総支出" /><input type="number" step="10" readonly="readonly" />
+                <input type="text" value="総支出" /><input type="number"  id="allOutgo" step="10" readonly="readonly" />
             </div>
             <div class="item">
-                <input type="text" value="不労所得" /><input type="number" step="10" readonly="readonly" />
+                <input type="text" value="不労所得" /><input type="number" id="nonWorkedIncome" step="10" readonly="readonly" />
             </div>
             <div class="item">
-                <input type="text" value="キャッシュフロー" /><input type="number" step="10" readonly="readonly" />
+                <input type="text" value="キャッシュフロー" /><input type="number" id="cashflow" step="10" readonly="readonly" />
             </div>
         </section>
         <section>
             <h2>損益計算書</h2>
             <h3>収入</h3>
-            <div>
+            <div id="income">
                 <input type="button" class="addingContents" value="+" />
                 <input type="button" class="removingContents" value="-" />
                 <div class="item">
-                    <input type="text" /><input type="number" step="10" />
+                    <input type="text" value="給料" /><input type="number" id="salary" step="10" />
                 </div>
             </div>
             <h3>支出</h3>
-            <div>
+            <div id="outgo">
                 <input type="button" class="addingContents" value="+" />
                 <input type="button" class="removingContents" value="-" />
                 <div class="item">
@@ -65,6 +65,14 @@
                     <input type="text" value="その他の支出" /><input type="number" step="10" />
                 </div>
             </div>
+        </section>
+        <section id="pay" class="modal">
+            <input type="number" step="10" />
+            <input type="button" value="受け取る" />
+        </section>
+        <section id="loss" class="modal">
+            <input type="number" step="10" />
+            <input type="button" value="払う" />
         </section>
     </body>
 </html>
