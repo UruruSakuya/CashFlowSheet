@@ -1,3 +1,31 @@
+function calculate() {
+    var allIncome = 0;
+    var $incomeList = $("#income").find("input[type=number]");
+    jQuery.each($incomeList, function() {
+        if ($(this).val()) {
+            allIncome = allIncome + parseInt($(this).val());
+        }
+    });
+    $("#allIncome").val(allIncome);
+
+    var allOutgo = 0;
+    var $outgoList = $("#outgo").find("input[type=number]");
+    jQuery.each($outgoList, function() {
+        if ($(this).val()) {
+            allOutgo = allOutgo + parseInt($(this).val());
+        }
+    });
+    $("#allOutgo").val(allOutgo);
+
+    $("#nonWorkedIncome").val(allIncome - parseInt($("#salary").val()));
+
+    $("#cashflow").val(allIncome - allOutgo);
+
+    jQuery.each($("input[type=number]"), function() {
+        $(this).val(parseInt($(this).val(), 10));
+    });
+}
+
 function createView() {
     var adding = function() {
         $(this).parent().children(":last-child").after(
@@ -6,17 +34,21 @@ function createView() {
 
     var removing = function() {
         $items = $(this).parent().children("div");
-        $items[$items.size() - 1].remove();
+        if ($items.size() !== 0) {
+            $items[$items.size() - 1].remove();
+        }
     };
 
     $addingButtons = $("input.addingContents");
     jQuery.each($addingButtons, function() {
         $(this).bind("click", adding);
+        $(this).bind("click", calculate);
     });
 
     $removingButtons = $("input.removingContents");
     jQuery.each($removingButtons, function() {
         $(this).bind("click", removing);
+        $(this).bind("click", calculate);
     });
 
     $("#payCheck").bind("click", function() {
@@ -49,34 +81,6 @@ function createView() {
 
     $("section.modal").find("p.close").bind("click", function() {
         $(this).parent("section").fadeOut(0);
-    });
-}
-
-function calculate() {
-    var allIncome = 0;
-    var $incomeList = $("#income").find("input[type=number]");
-    jQuery.each($incomeList, function() {
-        if ($(this).val()) {
-            allIncome = allIncome + parseInt($(this).val());
-        }
-    });
-    $("#allIncome").val(allIncome);
-
-    var allOutgo = 0;
-    var $outgoList = $("#outgo").find("input[type=number]");
-    jQuery.each($outgoList, function() {
-        if ($(this).val()) {
-            allOutgo = allOutgo + parseInt($(this).val());
-        }
-    });
-    $("#allOutgo").val(allOutgo);
-
-    $("#nonWorkedIncome").val(allIncome - parseInt($("#salary").val()));
-
-    $("#cashflow").val(allIncome - allOutgo);
-
-    jQuery.each($("input[type=number]"), function() {
-        $(this).val(parseInt($(this).val(), 10));
     });
 }
 
