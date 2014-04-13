@@ -4,45 +4,82 @@
     font-weight : normal; 
     margin : 0px;
     padding: 0px;
+    color : #737263;
 }
 
 html, body {
     height : 100%;
-    /*text-align : center;*/ 
+    text-align : center;
+}
+
+h1 {
+    background-color : #FFFCDB;
+    border : 3px solid #FFFCDB;
+    font-size : 120%;
+}
+
+h2 {
+    background-color : #FFD65C;
+    font-size : 110%;    
 }
 
 h3 {
-    display : inline;
+    background-color : #E6FFC2;
 }
 
-input {
-    width : auto;
-    margin : 0.3%; 
+input[type=text], input[type=number] {
+    width : 35%;
+    margin : 2%; 
+}
+
+input[type=number] {
+    text-align : right;
+}
+
+input[type=button] {
+    margin : 1%;
+    width : 30%;
+    display : inline-block;
+    text-align : center;
+    text-decoration : none;
+    outline : none;
+}
+
+section {
+    margin : 0 auto;
+    padding : 0 1% 1% 1%; 
+    border : 3px solid #FFFCDB;
+    border-radius : 1%;
 }
 
 .item {
-    
+    border-top : 1px solid #E4E4E4;
 }
 
 .addingContents {
-    
+
+}
+
+.close {
+    text-align : right;
 }
 
 .removingContents {
-    
+
 }
 
 .modal {
+    width : 95%;
+    /*height : 100%;*/ 
+    background-color : #FFFCDB;
     display : none;
-    -moz-transform: translate(0, 100%);
-    -webkit-transform: translate(0, 100%);
-    -o-transform: translate(0, 100%);
-    -ms-transform: translate(0, 100%);
+    -moz-transform: translate(0, 5%);
+    -webkit-transform: translate(0, 5%);
+    -o-transform: translate(0, 5%);
+    -ms-transform: translate(0, 5%);
     position : fixed;
-    top : 0;
-    left : 60%;
-    border : 2px solid #000;
+    top : 10%;
+    /*left : 1%;*/
+    border : 2px solid #FFD65C;
     border-radius : 5%;
-/*    right : 0;
-    bottom : 0; */
 }

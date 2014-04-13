@@ -3,19 +3,20 @@
     <head>
         <title>キャッシュフローシート</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width ">
+        <meta name="viewport" content="width=device-width">
         <script src="js/cashflowsheet.js"></script>
         <script src="js/vendor/jquery.js"></script>
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body onload="init()">
+        <h1>キャッシュフローシート</h1>
         <section>
             <h2>サマリー</h2>
+            <input type="button" id="payedHandMoney" value="+" />
+            <input type="button" id="lossedHandMoney" value="-" />
+            <input type="button" id="payCheck" value="ペイチェック" />
             <div class="item">
                 <input type="text" value="所持金" /><input type="number" step="10" id="handMoney" readonly="readonly" />
-                <input type="button" id="payedHandMoney" value="+" />
-                <input type="button" id="lossedHandMoney" value="-" />
-                <input type="button" id="payCheck" value="ペイチェック" />
             </div>
             <div class="item">
                 <input type="text" value="総収入" /><input type="number" id="allIncome" step="10" readonly="readonly" />
