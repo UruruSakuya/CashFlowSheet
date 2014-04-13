@@ -32,7 +32,7 @@ function createView() {
     });
 
     $("#pay").find("input[type=button]").bind("click", function() {
-        if($(this).siblings("input[type=number]").val()) {
+        if ($(this).siblings("input[type=number]").val()) {
             $("#handMoney").val(parseInt($("#handMoney").val()) + parseInt($(this).siblings("input[type=number]").val()));
             $(this).siblings("input[type=number]").val(0);
             $("#pay").fadeOut(0);
@@ -40,17 +40,16 @@ function createView() {
     });
 
     $("#loss").find("input[type=button]").bind("click", function() {
-        if($(this).siblings("input[type=number]").val()) {
+        if ($(this).siblings("input[type=number]").val()) {
             $("#handMoney").val(parseInt($("#handMoney").val()) - parseInt($(this).siblings("input[type=number]").val()));
             $(this).siblings("input[type=number]").val(0);
             $("#loss").fadeOut(0);
         }
     });
-    
-    $("section.modal").find("p.close").bind("click", function() {
-       $(this).parent("section").fadeOut(0);
-    });
 
+    $("section.modal").find("p.close").bind("click", function() {
+        $(this).parent("section").fadeOut(0);
+    });
 }
 
 function calculate() {
@@ -75,6 +74,10 @@ function calculate() {
     $("#nonWorkedIncome").val(allIncome - parseInt($("#salary").val()));
 
     $("#cashflow").val(allIncome - allOutgo);
+
+    jQuery.each($("input[type=number]"), function() {
+        $(this).val(parseInt($(this).val(), 10));
+    });
 }
 
 function init() {
