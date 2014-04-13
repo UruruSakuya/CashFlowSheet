@@ -9,6 +9,7 @@
 
 html, body {
     height : 100%;
+    font-size : 90%;
     text-align : center;
 }
 
@@ -38,7 +39,7 @@ input[type=number] {
 
 input[type=button] {
     margin : 1%;
-    width : 30%;
+    width : 31%;
     display : inline-block;
     text-align : center;
     text-decoration : none;
