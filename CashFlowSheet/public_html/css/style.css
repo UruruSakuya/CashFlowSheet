@@ -46,11 +46,16 @@ input[type=button] {
     outline : none;
 }
 
+ul {
+    background-color : #FFFCDB; 
+}
+
 section {
     margin : 0 auto;
     padding : 0 1% 1% 1%; 
     border : 3px solid #FFFCDB;
     border-radius : 1%;
+    display : none;
 }
 
 .item {
@@ -67,6 +72,13 @@ section {
 
 .removingContents {
 
+}
+
+.menu {
+    padding: 1% 10%;
+    display: inline;
+    text-align : left;
+    background-color : #FFFCDB;
 }
 
 .modal {

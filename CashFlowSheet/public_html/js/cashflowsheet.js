@@ -39,13 +39,13 @@ function createView() {
         }
     };
 
-    $addingButtons = $("input.addingContents");
+    var $addingButtons = $("input.addingContents");
     jQuery.each($addingButtons, function() {
         $(this).bind("click", adding);
         $(this).bind("click", calculate);
     });
 
-    $removingButtons = $("input.removingContents");
+    var $removingButtons = $("input.removingContents");
     jQuery.each($removingButtons, function() {
         $(this).bind("click", removing);
         $(this).bind("click", calculate);
@@ -77,6 +77,39 @@ function createView() {
             $(this).siblings("input[type=number]").val(0);
             $("#loss").fadeOut(0);
         }
+    });
+
+    var $menus = $(".menu");
+    var $targetOfMenus = $("#summary, #income, #outgo");
+    
+    // 0 = サマリー
+    // 1 = 収入
+    // 2 = 支出
+    var i = 0;
+    jQuery.each($menus, function() {
+        $(this).bind("click", function() {
+            switch (i) {
+                case 0:
+                    $($targetOfMenus[0]).fadeIn(0);
+                    $($targetOfMenus[1]).fadeOut(0);
+                    $($targetOfMenus[2]).fadeOut(0);
+
+                    break;
+                case 1:
+                    $($targetOfMenus[0]).fadeOut(0);
+                    $($targetOfMenus[1]).fadeIn(0);
+                    $($targetOfMenus[2]).fadeOut(0);;
+
+                    break;
+                case 2:
+                    $($targetOfMenus[0]).fadeOut(0);
+                    $($targetOfMenus[1]).fadeOut(0);
+                    $($targetOfMenus[2]).fadeIn(0);
+                    
+                    break;
+            }
+            i++;
+        });
     });
 
     $("section.modal").find("p.close").bind("click", function() {
