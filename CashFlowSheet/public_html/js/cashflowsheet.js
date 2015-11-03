@@ -26,6 +26,69 @@ function calculate() {
     });
 }
 
+var Calculater = function () {
+	// HTML object
+	var displayCalc = $("#calc > div.displayCalc > input")[0];
+	var operaterStatus= "";
+	var calculatedNumber = 0;
+	
+	$("#calc > div.typeCalc > input[name=one]").bind("click", function() {
+        // $("#calc > div.displayCalc > input").val(1);
+      if (displayCalc.value === 0) {
+		  displayCalc.value = 1;
+		  alert(displayCalc);
+		  
+	  } else {
+		  calculatedNumber = 1;
+	  }
+	});
+	
+	$("#calc > div.typeCalc > input[name=one]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=two]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=three]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=four]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=five]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=six]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=seven]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=eight]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=nine]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=plus]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=minus]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=multiple]").bind("click", function() {
+    });
+	
+	$("#calc > div.typeCalc > input[name=equal]").bind("click", function() {
+		if (operaterStatus !== "") {
+			switch (operaterStatus) {
+				case "plus":
+				
+			}
+		}
+    });
+};
+
 function createView() {
     var adding = function() {
         $(this).parent().children(":last-child").after(
@@ -139,11 +202,11 @@ function createView() {
     $("section.modal").find("p.close").bind("click", function() {
         $(this).parent("section").fadeOut(0);
     });
-    
-    $("#calc > div.typeCalc > input[name=one]").bind("click", function() {
-        $("#calc > div.displayCalc > input").val(1);
-    });
+	
+	var calc = new Calculater();
 }
+
+
 
 function init() {
     createView();

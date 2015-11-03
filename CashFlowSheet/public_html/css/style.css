@@ -1,6 +1,6 @@
 * {
     font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN',Meiryo, sans-serif;
-    font-size : 100%;
+    font-size : 200%;
     font-weight : normal; 
     margin : 0px;
     padding: 0px;
@@ -16,12 +16,12 @@ html, body {
 h1 {
     background-color : #FFFCDB;
     border : 3px solid #FFFCDB;
-    font-size : 120%;
+    font-size : 220%;
 }
 
 h2 {
     background-color : #FFD65C;
-    font-size : 110%;    
+    font-size : 210%;    
 }
 
 h3 {
@@ -94,7 +94,7 @@ section {
 }
 
 .typeCalc > input {
-    text-align : right;
+    text-align : center;
     border : 3px solid #FFFCDB;
     width: 20%
 }
