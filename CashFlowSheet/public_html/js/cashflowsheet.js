@@ -87,29 +87,41 @@ function createView() {
     // 2 = 支出
     var i = 0;
     jQuery.each($menus, function() {
-        $(this).bind("click", function() {
-            switch (i) {
-                case 0:
-                    $($targetOfMenus[0]).fadeIn(0);
-                    $($targetOfMenus[1]).fadeOut(0);
-                    $($targetOfMenus[2]).fadeOut(0);
-
-                    break;
-                case 1:
-                    $($targetOfMenus[0]).fadeOut(0);
-                    $($targetOfMenus[1]).fadeIn(0);
-                    $($targetOfMenus[2]).fadeOut(0);;
-
-                    break;
-                case 2:
-                    $($targetOfMenus[0]).fadeOut(0);
-                    $($targetOfMenus[1]).fadeOut(0);
-                    $($targetOfMenus[2]).fadeIn(0);
+        switch (i) {
+            case 0:
+                $(this).bind("click", function() {
+                    jQuery.each($targetOfMenus, function() {
+                        $(this).fadeOut(0);
+                    });
                     
-                    break;
-            }
-            i++;
-        });
+                    $($targetOfMenus[0]).fadeIn(0);
+                });
+                
+                break;
+
+            case 1:
+                $(this).bind("click", function() {
+                    jQuery.each($targetOfMenus, function() {
+                        $(this).fadeOut(0);
+                    });
+                    
+                    $($targetOfMenus[1]).fadeIn(0);
+                });
+                
+                break;
+
+            case 2:
+                $(this).bind("click", function() {
+                    jQuery.each($targetOfMenus, function() {
+                        $(this).fadeOut(0);
+                    });
+                    
+                    $($targetOfMenus[2]).fadeIn(0);
+                });
+                
+                break;
+        }
+        i++;
     });
 
     $("section.modal").find("p.close").bind("click", function() {
@@ -127,5 +139,7 @@ function init() {
     $("#outgo").bind("change", function() {
         calculate();
     });
+
+    $("#summary").fadeIn(0);
 }
 
