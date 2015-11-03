@@ -80,11 +80,12 @@ function createView() {
     });
 
     var $menus = $(".menu");
-    var $targetOfMenus = $("#summary, #income, #outgo");
+    var $targetOfMenus = $("#summary, #income, #outgo, #calc");
     
     // 0 = サマリー
     // 1 = 収入
     // 2 = 支出
+    // 3 = 電卓
     var i = 0;
     jQuery.each($menus, function() {
         switch (i) {
@@ -120,12 +121,27 @@ function createView() {
                 });
                 
                 break;
+
+            case 3:
+                $(this).bind("click", function() {
+                    jQuery.each($targetOfMenus, function() {
+                        $(this).fadeOut(0);
+                    });
+                    
+                    $($targetOfMenus[3]).fadeIn(0);
+                });
+                
+                break;
         }
         i++;
     });
 
     $("section.modal").find("p.close").bind("click", function() {
         $(this).parent("section").fadeOut(0);
+    });
+    
+    $("#calc > div.typeCalc > input[name=one]").bind("click", function() {
+        $("#calc > div.displayCalc > input").val(1);
     });
 }
 
